@@ -3,9 +3,11 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validasi Pengisian KRS</title>
 </head>
 <body>
+
     <h2>Validasi Pengisian KRS</h2>
 
     <label>Nama Mahasiswa:</label>
@@ -26,6 +28,7 @@
         function validasiKRS() {
             let nama = document.getElementById("nama").value;
             let sks = Number(document.getElementById("sks").value);
+            let hasil = document.getElementById("hasil");
 
             if (nama.trim() === "") {
                 hasil.innerHTML = "Nama mahasiswa wajib diisi!";
@@ -36,5 +39,6 @@
             }
         }
     </script>
+
 </body>
 </html>
