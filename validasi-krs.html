@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validasi Pengisian KRS</title>
+</head>
+<body>
+
+    <h2>Validasi Pengisian KRS</h2>
+
+    <label>Nama Mahasiswa:</label>
+    <input type="text" id="nama">
+
+    <br><br>
+
+    <label>Total SKS:</label>
+    <input type="number" id="sks">
+
+    <br><br>
+
+    <button onclick="validasiKRS()">Periksa KRS</button>
+
+    <p id="hasil"></p>
+
+    <script>
+        function validasiKRS() {
+            let nama = document.getElementById("nama").value;
+            let sks = Number(document.getElementById("sks").value);
+            let hasil = document.getElementById("hasil");
+
+            if (nama.trim() === "") {
+                hasil.innerHTML = "Nama mahasiswa wajib diisi!";
+            } else if (sks <= 0 || sks > 24) {
+                hasil.innerHTML = "Jumlah SKS harus 1 sampai 24!";
+            } else {
+                hasil.innerHTML = "Pengisian KRS berhasil!";
+            }
+        }
+    </script>
+
+</body>
+</html>
